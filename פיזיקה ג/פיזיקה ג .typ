@@ -179,7 +179,8 @@
 )[
   == האפקט הפוטו-אלקטרי
 
-  אנרגית פוטון כתלות בתדר: #h(1fr) $E_"ph" = h nu$
+  אנרגיה של פוטון: #h(1fr) $E_"ph" = h nu = (h c) / lambda $ \
+  תנע של פוטון: #h(1fr) $p_"ph" = E_"ph" / c = (h nu) / c = h / lambda$
 
   האנרגיה הקינטית של פוטון ($B$ אנרגיית קשר):
 
@@ -194,7 +195,6 @@
   גרף מתח העצירה כתלות בתדר: #h(1fr) $V_0 = (h nu)/e - B/e$
   #image("melicenGraph.png", width: 100%)
 ]
-
 
 #block(
   fill: gray.lighten(100%),
@@ -251,6 +251,7 @@
   קשר בין פרמטר פגיעה $b$ לזווית הפיזור $theta$:
 
   #h(1fr) $b = 1/2 r_min cot(theta / 2) = (k q_alpha q_N) / (m v_0^2) cot(theta / 2)$
+  \ $cot alpha = 1/(tan alpha)$
 
   חתך פעולה דיפרנציאלי לפיזור רתפורד (הסתברות הפיזור):
 
@@ -669,18 +670,25 @@
 )[
   == טרנספורמציית לורנץ
 
-  *הטרנספורמציה הישירה (מ-$S$ ל-$S'$):* \
-  #text(size: 8pt)[מעבר ממערכת $S$ למערכת $S'$ הנעה ימינה במהירות קבועה $v$ ביחס אליה:] \
-  #h(
-    1fr,
-  ) $vec(c t', x') = gamma mat(1, -beta; -beta, 1) vec(c t, x) quad , quad beta = v/c quad , quad \ gamma = 1 / sqrt(1 - beta^2)$ \
-  #text(size: 8pt)[פתיחה:] \
-  #h(1fr) $t' = gamma (t - (v)/(c^2) x) quad , quad x' = gamma (x - v t) quad \ #h(1fr) quad y' = y quad , quad z' = z$
+  #text(size: 8pt)[$S'$ נעה במהירות קבועה $v$ בכיוון $+x$ ביחס ל-$S$. \
+   נסמן: $beta = v/c quad , quad gamma = 1/sqrt(1-beta^2)$.] \
+  
+  *הצגה מטריציונית כללית* \
+  הישירה מ-$S$ ל-$S'$: #h(1fr) $vec(x', t') = gamma mat(1, -v; -v/c^2, 1) vec(x, t)$ \
+  \
+  ההפוכה מ-$S'$ ל-$S$: #h(1fr) $vec(x, t) = gamma mat(1, v; v/c^2, 1) vec(x', t')$ \
+  #text(size: 8pt)[פתיחה ישירה: $x' = gamma(x - v t) quad , quad t' = gamma(t - v/c^2 x)$] \
 
-  *הטרנספורמציה ההפוכה (מ-$S'$ ל-$S$):* \
-  #text(size: 8pt)[כמו הצבת מהירות נגדית $-v$ במקום $v$:] \
-  #h(1fr) $vec(c t, x) = gamma mat(1, beta; beta, 1) vec(c t', x')$ \
-  #h(1fr) $t = gamma (t' + (v)/(c^2) x') quad , quad x = gamma (x' + v t')$
+  *מטריצה מנורמלת (וקטור מנורמל - $(c t, x)^T$):* \
+  #text(size: 8pt)[יחידות זהות של אורך לשני הצירים] \
+  הישירה מ-$S$ ל-$S'$: #h(1fr) $vec(c t', x') = gamma mat(1, -beta; -beta, 1) vec(c t, x)$ \
+  \
+  ההפוכה מ-$S'$ ל-$S$: #h(1fr) $vec(c t, x) = gamma mat(1, beta; beta, 1) vec(c t', x')$ \
+
+  *מרחב מינקובסקי ב-4 ממדים (1+3):* \
+  
+  #h(1fr) $vec(c t', x', y', z') = mat(gamma, -gamma beta, 0, 0; -gamma beta, gamma, 0, 0; 0, 0, 1, 0; 0, 0, 0, 1) vec(c t, x, y, z)$
+
 ]
 
 #block(
@@ -691,8 +699,8 @@
 )[
   == חיבור מהירויות יחסותיות
 
-  #text(size: 8pt)[חלקיק נע במהירות $u'$ במערכת $S'$, הנעה במהירות $v$ ביחס למערכת $S$:] \
-  #h(1fr) $u_x = (u'_x + v) / (1 + (u'_x v) / (c^2))$
+  #text(size: 8pt)[חלקיק נע במהירות $u'$ במערכת $S'$, הנעה במהירות $v$ ביחס ל-$S$ (בכיוון ציר $x$):] \
+  #h(1fr) $u = (u' + v) / (1 + (u' v) / (c^2)) quad , quad u' = (u - v) / (1 - (u v) / (c^2)) quad , quad v = (u - u') / (1 - (u u') / (c^2))$
 ]
 
 #block(
@@ -701,16 +709,24 @@
   inset: 5pt,
   radius: 2pt,
 )[
-  == האינטרוול ומרחב מינקובסקי
+  == אינטרוול מרחב-זמן - מרחב מינקובסקי
+גודל אינווריאנטי. נשמר זהה בכל מערכות הייחוס \ *האינטרוול:   $I = I'=(Delta s)^2$.\ *
+ כאשר $Delta s$  הוא המרחק האבסולוטי בין שני אירועים במרחב-זמן.
+ 
+  #h(1fr) $I = (Delta s)^2 = (c Delta t)^2 - (Delta x)^2 - (Delta y)^2 - (Delta z)^2$ \
+  עבור אינטרוול דמוי-זמן ($I > 0$), הקשר לזמן העצמי $Delta tau$ הוא: #h(1fr) $I = Delta s^2 = (c Delta tau)^2$
 
-  *האינטרוול ($I$ או $Delta s^2$) - גודל אינווריאנטי הנשמר בכל מערכת:* \
-  #h(1fr) $I = (c Delta t)^2 - (Delta x)^2 - (Delta y)^2 - (Delta z)^2$
-
-  *סיווג אינטרוולים:* \
-  1. *דמוי-זמן ($I > 0$)*: $v < c$, קיים קשר סיבתי (יש מערכת בה $Delta x = 0$). \
-  2. *דמוי-מרחב ($I < 0$)*: $v > c$, אין קשר סיבתי (יש מערכת בה $Delta t = 0$). \
-  3. *דמוי-אור ($I = 0$)*: $v = c$, עבור חלקיקים חסרי מסה בלבד.
+  *סוגי אינטרוולים:* \
+  1. *דמוי-זמן - TL ($I > 0$):* $(c Delta t)^2 > (Delta x)^2 => v < c$ \
+  #text(size: 8pt)[ההפרש בעיקר בזמן. חלקיק יכול לעבור. *יש קשר סיבתי*. סדר הזמנים נשמר בכל מערכת] \
+  #text(size: 8pt)[קיימת מערכת בה $Delta x = 0$ ההתרחשות באותו מקום. \ #h(1fr) $I = (c Delta tau)^2$.] \
+  2. *דמוי-מרחב - SL ($I < 0$):* \ $(c Delta t)^2 < (Delta x)^2 => v > c$ \
+  #text(size: 8pt)[ ההפרש בעיקר במרחב. *אין קשר סיבתי*.] \
+  #text(size: 8pt)[ סדר הזמנים *יכול להתהפך* במערכות שונות קיימת מערכת בה $Delta t = 0$ (בו-זמנית).] \
+  3. *דמוי-אור - LL ($I = 0$):*\ #h(1fr) $(c Delta t)^2 = (Delta x)^2 => v = c$ \
+  #text(size: 8pt)[ על המגבלה. רק קרן אור עוברת. ביחס לאור אין כלל זמן והמרחב מתכווץ לאפס.]
 ]
+
 
 #block(
   fill: gray.lighten(100%),
@@ -824,6 +840,40 @@
   #h(1fr) $a / (sin alpha)= b / (sin beta)= c / (sin gamma) quad , quad c^2 = a^2 + b^2 - 2 a b cos gamma$
 ]
 
+
+#block(
+  fill: gray.lighten(100%),
+  stroke: 0.5pt + black,
+  inset: 5pt,
+  radius: 2pt,
+)[
+  == נספח פיזיקלי: קלאסית וחשמל בסיסי
+
+  *קינמטיקה:* \
+  #h(1fr) $v = v_0 + a t quad , quad x = x_0 + v_0 t + 1/2 a t^2 quad , quad \ v^2 = v_0^2 + 2a Delta x$ \
+  *תנועה מעגלית:* \
+  #h(
+    1fr,
+  ) $a_R = v^2/R = omega^2 R quad , quad v = omega R quad , quad T = (2pi)/omega quad , quad sum arrow(F)_R = m v^2/R hat(r)$ \
+  *חוקי ניוטון:* #h(1fr) $sum arrow(F) = m arrow(a)$ \
+  *שימור תנע:* #h(1fr) $sum arrow(p)_i = sum arrow(p)_f quad , quad arrow(p) = m arrow(v)$ \
+  *אנרגיה:*\ #h(1fr) $E_k = 1/2 m v^2 quad , quad E_i = E_f quad , quad W_"nc" = Delta E$ \
+
+
+  *כבידה:* #h(1fr) $arrow(F)_g = (G m_1 m_2) / r^2 hat(r) quad , quad U_g = -(G m_1 m_2) / r$ \
+
+
+  *כוח חשמלי:* #h(1fr) $arrow(F)_e = (k q_1 q_2) / r^2 hat(r)$ \
+  *כוח מגנטי וכוח לורנץ:* \
+  #h(
+    1fr,
+  ) $arrow(F)_B = q arrow(v) times arrow(B) quad , quad arrow(F)_B = I arrow(L) times arrow(B) quad , quad R = (m v) / (q B)$ \
+
+  *שדה ופוטנציאל:* #h(1fr) $arrow(F) = q arrow(E) quad , quad U = q V$ \
+  *ממטען נקודתי:* #h(1fr) $E = (k q) / r^2 quad , quad V = (k q) / r$ \
+  *קשרים דיפרנציאליים:* #h(1fr) $arrow(E) = -nabla V quad , quad arrow(F) = -nabla U$
+]
+
 #place(bottom, float: true, scope: "parent")[
   #grid(
     columns: (1.2fr, 1fr),
@@ -884,37 +934,4 @@
       ]
     ],
   )
-]
-
-#block(
-  fill: gray.lighten(100%),
-  stroke: 0.5pt + black,
-  inset: 5pt,
-  radius: 2pt,
-)[
-  == נספח פיזיקלי: קלאסית וחשמל בסיסי
-
-  *קינמטיקה:* \
-  #h(1fr) $v = v_0 + a t quad , quad x = x_0 + v_0 t + 1/2 a t^2 quad , quad \ v^2 = v_0^2 + 2a Delta x$ \
-  *תנועה מעגלית:* \
-  #h(
-    1fr,
-  ) $a_R = v^2/R = omega^2 R quad , quad v = omega R quad , quad T = (2pi)/omega quad , quad sum arrow(F)_R = m v^2/R hat(r)$ \
-  *חוקי ניוטון:* #h(1fr) $sum arrow(F) = m arrow(a)$ \
-  *שימור תנע:* #h(1fr) $sum arrow(p)_i = sum arrow(p)_f quad , quad arrow(p) = m arrow(v)$ \
-  *אנרגיה:*\ #h(1fr) $E_k = 1/2 m v^2 quad , quad E_i = E_f quad , quad W_"nc" = Delta E$ \
-
-
-  *כבידה:* #h(1fr) $arrow(F)_g = (G m_1 m_2) / r^2 hat(r) quad , quad U_g = -(G m_1 m_2) / r$ \
-
-
-  *כוח חשמלי:* #h(1fr) $arrow(F)_e = (k q_1 q_2) / r^2 hat(r)$ \
-  *כוח מגנטי וכוח לורנץ:* \
-  #h(
-    1fr,
-  ) $arrow(F)_B = q arrow(v) times arrow(B) quad , quad arrow(F)_B = I arrow(L) times arrow(B) quad , quad R = (m v) / (q B)$ \
-
-  *שדה ופוטנציאל:* #h(1fr) $arrow(F) = q arrow(E) quad , quad U = q V$ \
-  *ממטען נקודתי:* #h(1fr) $E = (k q) / r^2 quad , quad V = (k q) / r$ \
-  *קשרים דיפרנציאליים:* #h(1fr) $arrow(E) = -nabla V quad , quad arrow(F) = -nabla U$
 ]
