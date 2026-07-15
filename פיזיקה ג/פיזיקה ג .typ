@@ -179,7 +179,7 @@
 )[
   == האפקט הפוטו-אלקטרי
 
-  אנרגיה של פוטון: #h(1fr) $E_"ph" = h nu = (h c) / lambda $ \
+  אנרגיה של פוטון: #h(1fr) $E_"ph" = h nu = (h c) / lambda$ \
   תנע של פוטון: #h(1fr) $p_"ph" = E_"ph" / c = (h nu) / c = h / lambda$
 
   האנרגיה הקינטית של פוטון ($B$ אנרגיית קשר):
@@ -671,8 +671,8 @@
   == טרנספורמציית לורנץ
 
   #text(size: 8pt)[$S'$ נעה במהירות קבועה $v$ בכיוון $+x$ ביחס ל-$S$. \
-   נסמן: $beta = v/c quad , quad gamma = 1/sqrt(1-beta^2)$.] \
-  
+    נסמן: $beta = v/c quad , quad gamma = 1/sqrt(1-beta^2)$.] \
+
   *הצגה מטריציונית כללית* \
   הישירה מ-$S$ ל-$S'$: #h(1fr) $vec(x', t') = gamma mat(1, -v; -v/c^2, 1) vec(x, t)$ \
   \
@@ -686,8 +686,10 @@
   ההפוכה מ-$S'$ ל-$S$: #h(1fr) $vec(c t, x) = gamma mat(1, beta; beta, 1) vec(c t', x')$ \
 
   *מרחב מינקובסקי ב-4 ממדים (1+3):* \
-  
-  #h(1fr) $vec(c t', x', y', z') = mat(gamma, -gamma beta, 0, 0; -gamma beta, gamma, 0, 0; 0, 0, 1, 0; 0, 0, 0, 1) vec(c t, x, y, z)$
+
+  #h(
+    1fr,
+  ) $vec(c t', x', y', z') = mat(gamma, -gamma beta, 0, 0; -gamma beta, gamma, 0, 0; 0, 0, 1, 0; 0, 0, 0, 1) vec(c t, x, y, z)$
 
 ]
 
@@ -700,7 +702,11 @@
   == חיבור מהירויות יחסותיות
 
   #text(size: 8pt)[חלקיק נע במהירות $u'$ במערכת $S'$, הנעה במהירות $v$ ביחס ל-$S$ (בכיוון ציר $x$):] \
-  #h(1fr) $u = (u' + v) / (1 + (u' v) / (c^2)) quad , quad u' = (u - v) / (1 - (u v) / (c^2)) quad , quad v = (u - u') / (1 - (u u') / (c^2))$
+  #h(
+    1fr,
+  ) $u = (u' + v) / (1 + (u' v) / (c^2)) quad , quad u' = (u - v) / (1 - (u v) / (c^2)) quad , quad v = (u - u') / (1 - (u u') / (c^2))$ \
+  נוסחאות עבור יחידות $c$ להציב את המהירויות ביחידות של $c$:\
+  #h(1fr) $u = (u' + v) / (1 + u' v ) quad , quad u' = (u - v) / (1 - u v) quad , quad v = (u - u') / (1 - u u')$ \
 ]
 
 #block(
@@ -710,9 +716,9 @@
   radius: 2pt,
 )[
   == אינטרוול מרחב-זמן - מרחב מינקובסקי
-גודל אינווריאנטי. נשמר זהה בכל מערכות הייחוס \ *האינטרוול:   $I = I'=(Delta s)^2$.\ *
- כאשר $Delta s$  הוא המרחק האבסולוטי בין שני אירועים במרחב-זמן.
- 
+  גודל אינווריאנטי. נשמר זהה בכל מערכות הייחוס \ *האינטרוול:   $I = I'=(Delta s)^2$.\ *
+  כאשר $Delta s$  הוא המרחק האבסולוטי בין שני אירועים במרחב-זמן.
+
   #h(1fr) $I = (Delta s)^2 = (c Delta t)^2 - (Delta x)^2 - (Delta y)^2 - (Delta z)^2$ \
   עבור אינטרוול דמוי-זמן ($I > 0$), הקשר לזמן העצמי $Delta tau$ הוא: #h(1fr) $I = Delta s^2 = (c Delta tau)^2$
 
@@ -884,7 +890,7 @@
         stroke: 0.5pt + black,
         inset: 5pt,
         radius: 2pt,
-        width: 100%
+        width: 100%,
       )[
         == נספח מתמטי: אלמנטים דיפרנציאליים
         עבור אינטגרצייה על ספירה מלאה: $phi in [0, 2 pi], theta in [0, pi]$
@@ -925,10 +931,18 @@
             align: center + horizon,
             stroke: 0.5pt + luma(200),
             [*חוק*], [*צורה דיפרנציאלית*], [*צורה אינטגרלית*],
-            [*גאוס לחשמל*], $nabla dot arrow(E) = rho / epsilon_0$, $integral arrow(E) dot d arrow(A) = Q_"in" / epsilon_0$,
+            [*גאוס לחשמל*],
+            $nabla dot arrow(E) = rho / epsilon_0$,
+            $integral arrow(E) dot d arrow(A) = Q_"in" / epsilon_0$,
+
             [*גאוס למגנטיות*], $nabla dot arrow(B) = 0$, $integral arrow(B) dot d arrow(A) = 0$,
-            [*פראדיי*], $nabla times arrow(E) = - (partial arrow(B)) / (partial t)$, $integral arrow(E) dot d arrow(l) = - (d Phi_B) / (d t)$,
-            [*אמפר-מקסוול*], $nabla times arrow(B) = mu_0 arrow(J) + mu_0 epsilon_0 (partial arrow(E)) / (partial t)$, $integral arrow(B) dot d arrow(l) = mu_0 I_"in" + mu_0 epsilon_0 (d Phi_E) / (d t)$
+            [*פראדיי*],
+            $nabla times arrow(E) = - (partial arrow(B)) / (partial t)$,
+            $integral arrow(E) dot d arrow(l) = - (d Phi_B) / (d t)$,
+
+            [*אמפר-מקסוול*],
+            $nabla times arrow(B) = mu_0 arrow(J) + mu_0 epsilon_0 (partial arrow(E)) / (partial t)$,
+            $integral arrow(B) dot d arrow(l) = mu_0 I_"in" + mu_0 epsilon_0 (d Phi_E) / (d t)$,
           )
         ]
       ]
